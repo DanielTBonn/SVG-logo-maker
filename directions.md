@@ -26,5 +26,4 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 Ask a user for a 3 letter input, what color the text will be, what shape the logo will be [circle, triangle, square], and the color of the shape. Use jest to run unit tests and inquirer for collecting user input. 
 
 Submit a sample SVG file generated, the Github repo containing the code, and a walkthrough video.
-
 Walkthrough video must show all tests passing, invoke the application from the command line, demonstrate how responses are entered, and show the generated .svg file being opened in the browser.
