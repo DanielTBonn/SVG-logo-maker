@@ -19,11 +19,8 @@ questions = [
         name: 'textColor',
         message: 'Enter a color for the text using a keyword or hexadecimal (i.e. red or #FF0000).',
         validate(value) {
-            // if (value.length <= 3 && value.length > 1) {
-            //     return true;
-            // }
-            return true;
-            return "You must enter a valid color"
+            let regExp = /^#[0-9A-F]{6}$/i;
+            return regExp.test(value) || "You must enter a valid color";
         }
     },
     {
@@ -37,11 +34,8 @@ questions = [
         name: 'shapeColor',
         message: 'Enter a color for the shape using a keyword or hexadecimal (i.e. red or #FF0000).',
         validate(value) {
-            // if (value.length <= 3 && value.length > 1) {
-            //     return true;
-            // }
-            return true;
-            return "You must enter a valid color"
+            let regExp = /^#[0-9A-F]{6}$/i;
+            return regExp.test(value) || "You must enter a valid color"; 
         },
     }
 ]
