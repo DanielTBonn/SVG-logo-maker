@@ -52,6 +52,7 @@ function init() {
         let result = JSON.stringify(answers, null, '  ');
         console.log('Answers:')
         console.log(result);
+        console.log("Generated logo.svg")
     })
     .catch((error) => {
         if (error) {
