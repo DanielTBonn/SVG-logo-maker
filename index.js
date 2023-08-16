@@ -8,7 +8,7 @@ questions = [
         name: 'logo',
         message: 'Enter up to three characters to generate your logo.',
         validate(value) {
-            if (value.length <= 3 && value.length > 1) {
+            if (value.length <= 3 && value.length > 0) {
                 return true;
             }
             return "You must enter up to three characters"
@@ -22,6 +22,7 @@ questions = [
             // if (value.length <= 3 && value.length > 1) {
             //     return true;
             // }
+            return true;
             return "You must enter a valid color"
         }
     },
@@ -29,7 +30,7 @@ questions = [
         type: 'list',
         name: 'shape',
         message: 'Please choose a shape for your logo.',
-        choices = ['circle', 'triangle', 'square']
+        choices: ['circle', 'triangle', 'square'],
     },
     {
         type: 'input',
@@ -39,6 +40,7 @@ questions = [
             // if (value.length <= 3 && value.length > 1) {
             //     return true;
             // }
+            return true;
             return "You must enter a valid color"
         },
     }
