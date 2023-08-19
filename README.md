@@ -8,6 +8,7 @@ In order to quickly create a logo for a product, company, or brand, I have creat
 - [Usage](#usage)
 - [Contribute](#contribute)
 - [Tests](#tests)
+-[Links](#links)
 - [Questions](#questions)
 
 ## Installation
@@ -26,6 +27,10 @@ No contributions necessary, however as always if you would like to offer advice 
 ## Tests
   
 When inside the SVG-logo-maker directory, from the command line run `npm test lib/shapes.test.js`.
+
+## Links
+
+https://watch.screencastify.com/v/2eOFqPv8WIrtFdXyo8P1
 
 ## Questions
 
