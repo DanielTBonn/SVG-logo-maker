@@ -8,7 +8,7 @@ In order to quickly create a logo for a product, company, or brand, I have creat
 - [Usage](#usage)
 - [Contribute](#contribute)
 - [Tests](#tests)
--[Links](#links)
+- [Links](#links)
 - [Questions](#questions)
 
 ## Installation
