@@ -56,7 +56,7 @@ function init() {
         answers.textColor = answers.textColor.toLowerCase();
         answers.shapeColor = answers.shapeColor.toLowerCase();
         let svgGenerated = getShape(answers);
-        writeFile('logo.svg', svgGenerated);
+        writeFile('./examples/logo.svg', svgGenerated);
         console.log("Generated logo.svg")
     })
     // error handling
