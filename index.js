@@ -2,6 +2,13 @@ const inquirer = require('inquirer');
 const {Shapes, Square, Circle, Triangle}= require('./lib/shapes.js')
 const fs = require('fs');
 const { writeFile } = require('fs/promises');
+const { validateHTMLColorName } = require('validate-color');
+
+
+// const tag = HTMLElement.createElement('div');
+
+// const check = HTMLElement;
+// console.log(check);
 
 questions = [
     {
@@ -21,7 +28,7 @@ questions = [
         message: 'Enter a color for the text using a keyword or hexadecimal (i.e. red or #FF0000).',
         validate(value) {
             let regExp = /^#[0-9A-F]{6}$/i;
-            return regExp.test(value) || "You must enter a valid color";
+            return regExp.test(value) || validateHTMLColorName(value) || "You must enter a valid color";
         }
     },
     {
@@ -36,7 +43,7 @@ questions = [
         message: 'Enter a color for the shape using a keyword or hexadecimal (i.e. red or #FF0000).',
         validate(value) {
             let regExp = /^#[0-9A-F]{6}$/i;
-            return regExp.test(value) || "You must enter a valid color"; 
+            return regExp.test(value) || validateHTMLColorName(value) || "You must enter a valid color"; 
         },
     }
 ]
@@ -67,6 +74,15 @@ function getShape(answers) {
     else {shape = new Triangle(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
     return shape.createShape();
 }
+
+
+
+let color = 'red';
+let notColor = 'hasdfas';
+console.log(validateHTMLColorName(color))
+
+console.log(validateHTMLColorName(notColor))
+
 
 init();
 // const shape = new Triangle('hi','hi','hi','hi')
