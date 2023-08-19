@@ -1,0 +1,1 @@
+![alttext](./examples/logo.svg)
