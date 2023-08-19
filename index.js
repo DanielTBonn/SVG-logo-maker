@@ -45,6 +45,7 @@ function init() {
     inquirer.prompt(questions)
     .then((answers) => {
         let result = JSON.stringify(answers, null, '  ');
+        answers.logo = answers.logo.toUpperCase()
         console.log('Answers:')
         console.log(result);
         let svgGenerated = getShape(answers);
