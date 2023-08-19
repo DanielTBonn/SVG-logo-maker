@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const shapes = require('./lib/shapes.js')
+const {Shapes, Square, Circle, Triangle}= require('./lib/shapes.js')
 const fs = require('fs');
 const { readFile, writeFile } = require('fs/promises');
 
@@ -47,7 +47,8 @@ function init() {
         let result = JSON.stringify(answers, null, '  ');
         console.log('Answers:')
         console.log(result);
-        writeFile('./examples/exampe-svg.svg', result);
+        let svgGenerated = getShape(answers);
+        writeFile('./examples/exampe-svg.svg', svgGenerated);
         console.log("Generated logo.svg")
     })
     .catch((error) => {
@@ -58,4 +59,14 @@ function init() {
     });
 }
 
+function getShape(answers) {
+    let shape;
+    if (answers.shape === 'square') {shape = new Square(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
+    else if (answers.shape === 'circle') {shape = new Circle(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
+    else {shape = new Triangle(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
+    return shape.createShape();
+}
+
 init();
+// const shape = new Triangle('hi','hi','hi','hi')
+// console.log(shape.createShape())
