@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewbox="0 0 100 100" >
+<polygon points="50 150, 100 50, 150 150"  height="100" stroke="pink" fill="pink" />
+<text x="77" y="107" font-size="25" font-weight="bold" fill="black">HIT</text>
+</svg>

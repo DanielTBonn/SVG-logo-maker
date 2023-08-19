@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const shapes = require('./lib/shapes.js')
 const fs = require('fs');
+const { readFile, writeFile } = require('fs/promises');
 
 questions = [
     {
@@ -46,11 +47,13 @@ function init() {
         let result = JSON.stringify(answers, null, '  ');
         console.log('Answers:')
         console.log(result);
+        writeFile('./examples/exampe-svg.svg', result);
         console.log("Generated logo.svg")
     })
     .catch((error) => {
         if (error) {
             console.log("There was an error.")
+            console.log(error)
         }
     });
 }
