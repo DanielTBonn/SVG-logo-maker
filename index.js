@@ -64,7 +64,7 @@ function getShape(answers) {
     if (answers.shape === 'square') {shape = new Square(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
     else if (answers.shape === 'circle') {shape = new Circle(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
     else {shape = new Triangle(answers.logo, answers.textColor, answers.shapeColor, answers.shape)}
-    return shape.createShape();
+    return shape.createSvg(shape.render(), shape.renderText());
 }
 
 init();
