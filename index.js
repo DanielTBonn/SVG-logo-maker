@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const {Shapes, Square, Circle, Triangle}= require('./lib/shapes.js')
 const fs = require('fs');
-const { readFile, writeFile } = require('fs/promises');
+const { writeFile } = require('fs/promises');
 
 questions = [
     {
