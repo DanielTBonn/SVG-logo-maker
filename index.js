@@ -1,14 +1,7 @@
 const inquirer = require('inquirer');
-const {Shapes, Square, Circle, Triangle}= require('./lib/shapes.js')
-const fs = require('fs');
+const {Square, Circle, Triangle}= require('./lib/shapes.js')
 const { writeFile } = require('fs/promises');
 const { validateHTMLColorName } = require('validate-color');
-
-
-// const tag = HTMLElement.createElement('div');
-
-// const check = HTMLElement;
-// console.log(check);
 
 questions = [
     {
@@ -51,10 +44,9 @@ questions = [
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-        let result = JSON.stringify(answers, null, '  ');
-        answers.logo = answers.logo.toUpperCase()
-        console.log('Answers:')
-        console.log(result);
+        answers.logo = answers.logo.toUpperCase();
+        answers.textColor = answers.textColor.toLowerCase();
+        answers.shapeColor = answers.shapeColor.toLowerCase();
         let svgGenerated = getShape(answers);
         writeFile('./examples/exampe-svg.svg', svgGenerated);
         console.log("Generated logo.svg")
@@ -75,15 +67,4 @@ function getShape(answers) {
     return shape.createShape();
 }
 
-
-
-let color = 'red';
-let notColor = 'hasdfas';
-console.log(validateHTMLColorName(color))
-
-console.log(validateHTMLColorName(notColor))
-
-
 init();
-// const shape = new Triangle('hi','hi','hi','hi')
-// console.log(shape.createShape())
