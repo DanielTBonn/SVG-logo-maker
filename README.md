@@ -16,6 +16,7 @@ Clone this repository and install the inquirer, jest, and validate-color dependi
 
 ## Usage
 ![example-svg-logo](./examples/example-logo.svg)
+
 At the command line, run `node index.js` and then answer the questions one by one through either user input or using the up-down arrow keys to look through a list.
 
 ## Contribute
